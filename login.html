@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<STYLE>
+#button{
+margin-left:50px;
+}
+.autostyle2{
+color:red;
+font-size:20px;
+text-align:center;
+}
+</STYLE>
+
+<pre>
+<script>
+function check(obj)
+{
+if(obj.t1.value!="user1" && obj.t2.value!="pass1")
+{
+	alert("Credentials are wrong");
+	f1.t2.focus();
+	f1.t2.select();
+}
+else
+{
+	alert("validated!! \n click on submit button..");
+}
+}
+</script>
+</pre>
+</head>
+
+<body bgcolor="#FFEBCD">
+<form action="product.html" name="f1" ID="f1">
+<table>
+<TR class="autostyle2"> 
+<TD colspan="2">LogIn Page</TD></TR>
+<TR>
+<TD WIDTH="100%" COLSPAN="2">
+</TD>
+</TR>
+
+<tr>
+<td>User Name: <Input type="text" ID="t1"></td>
+</tr>
+<tr>
+<td>
+Password: <INPUT type="password" ID="t2">
+</td>
+</tr>
+
+<tr>
+<td><BUTTON type="button" onclick="check(this.form)">
+<P>Validate</P></BUTTON></td>
+<td><BUTTON type="button" onclick=f1.submit();>
+<P>Submit</P>
+</BUTTON></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
