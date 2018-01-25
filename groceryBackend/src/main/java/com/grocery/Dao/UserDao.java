@@ -5,12 +5,7 @@ import com.grocery.Model.User;
 
 public interface UserDao {
 
-
-
-	void show();
-
-	
-
-
-	
+	/*void show();
+    
+	void insertUser();	*/
 }

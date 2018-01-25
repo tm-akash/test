@@ -2,36 +2,45 @@ package com.grocery.Model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.stereotype.Component;
+
+
+@Entity
+@Component
+@Table(name = "USER")
 public class User implements Serializable {
 
 	/**
 	 * 
 	 */
+
 	private static final long serialVersionUID = 1L;
+	@Id
+	@Column(name="NAME")
 	private String name;
+	@Column(name="EMAILID")
 	private String email;
+	@Column(name="PASSWORD")
 	private String password;
-	private String phone;
+	@Column(name="ADDRESS")
 	private String address;
 	
-	 public User() {
+/*	 public User() {
 	    }
 	 
 	    public User(String name, String email, String address, String phone) {
 	        this.name = name;
 	        this.email = email;
 	        this.address = address;
-	        this.phone = phone;
+	        this.password = password;
 	    }
 	
-	
-	
-	
-	
-	
-	
-	
-	
+		*/
 	
 	public String getName() {
 		return name;
@@ -50,12 +59,6 @@ public class User implements Serializable {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	public String getPhone() {
-		return phone;
-	}
-	public void setPhone(String phone) {
-		this.phone = phone;
 	}
 	public String getAddress() {
 		return address;

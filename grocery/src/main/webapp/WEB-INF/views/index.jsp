@@ -14,7 +14,7 @@
   </head>
   <body>
 
-
+<jsp:include page="header.jsp" /> 
 
     <main role="main">
 <div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
@@ -26,7 +26,7 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="first-slide" src="./images/b21.jpg" alt="First slide">
+            <img class="first-slide" src="./resources/images/b21.jpg" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
@@ -34,7 +34,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="second-slide" src="./images/b22.png" alt="Second slide">
+            <img class="second-slide" src="./resources/images/b22.png" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
                 <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
@@ -42,7 +42,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img class="third-slide" src="./images/b23.jpg" alt="Third slide">
+            <img class="third-slide" src="./resources/images/b23.jpg" alt="Third slide">
             <div class="container">
               <div class="carousel-caption text-right">
                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
@@ -150,7 +150,7 @@
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
-                <button type="submit" class="btn btn-success"><i class="fa fa-user-plus"></i> Register</button>
+                <button type="submit" class="btn btn-success"> <a href="newUser"><i class="fa fa-user-plus"></i> Register</a></button>
             </div>
         </div>
     </form>
@@ -175,17 +175,17 @@
    </form>			      	
 </div>
 <div id="section41" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-  <h1>Jeans</h1>
+  <h1>Breakfast,Dairy and Bakery</h1>
   <img src="./images/jeans.jpg" class="img-fluid" alt="Jeans"/>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
 <div id="section42" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-  <h1>Shirts</h1>
+  <h1>Fruits & Vegetables</h1>
   <img src="./images/shirts.jpg" class="img-fluid" alt="Shirts"/>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
 <div id="section43" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
-  <h1>Shoes</h1>
+  <h1>Indian Grocery</h1>
   <img src="./images/shoes.jpg" class="img-fluid" alt="Shoes"/>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>

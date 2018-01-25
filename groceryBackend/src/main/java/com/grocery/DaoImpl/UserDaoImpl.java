@@ -8,7 +8,7 @@ import com.grocery.Model.User;
 
 public class UserDaoImpl implements UserDao
 {
-	@Override
+	/*@Override
 	public void show()
 	{
 		List<User> user1= new ArrayList<User>();
@@ -22,6 +22,12 @@ public class UserDaoImpl implements UserDao
 		}
 		
 	}
-	
+
+	@Override
+	public void insertUser() {
+		// TODO Auto-generated method stub
+		
+	}
+	*/
 	
 }
