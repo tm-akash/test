@@ -27,8 +27,10 @@ public class User implements Serializable {
 	private String email;
 	@Column(name="PASSWORD")
 	private String password;
-	@Column(name="ADDRESS")
-	private String address;
+	private String role;
+	private Boolean enabled;
+	/*@Column(name="ADDRESS")
+	private String address;*/
 	
 /*	 public User() {
 	    }
@@ -42,6 +44,19 @@ public class User implements Serializable {
 	
 		*/
 	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
+	
+	public Boolean getEnabled() {
+		return enabled;
+	}
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
 	public String getName() {
 		return name;
 	}
@@ -60,12 +75,12 @@ public class User implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getAddress() {
+/*	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
-	}
+	}*/
 	
 	
 }
