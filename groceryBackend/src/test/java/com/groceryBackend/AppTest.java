@@ -1,5 +1,7 @@
 package com.groceryBackend;
 
+import com.grocery.Config.HibernateConfig;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -10,6 +12,12 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
+	
+	
+	public void before()
+	{
+		
+	}
     /**
      * Create the test case
      *
@@ -35,4 +43,8 @@ public class AppTest
     {
         assertTrue( true );
     }
+    
+  
+    
+    
 }

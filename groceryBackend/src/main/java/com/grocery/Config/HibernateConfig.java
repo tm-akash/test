@@ -52,7 +52,7 @@ public class HibernateConfig {
 		return p;
 	}
 	
-	@SuppressWarnings("deprecation")
+/*	@SuppressWarnings("deprecation")*/
 	@Autowired
 	@Bean(name="sessionFactory")
 		public SessionFactory getSessionFac(DataSource dataSource)
