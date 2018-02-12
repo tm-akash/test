@@ -1,4 +1,4 @@
-
+<%@taglib uri = "http://www.springframework.org/tags/form" prefix = "form"%>
 <%@ taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix ="spring" uri="http://www.springframework.org/tags" %>
 <!doctype html>
@@ -17,7 +17,7 @@
   </head>
   <body>
 
-<%-- <jsp:include page="/WEB-INF/views/header.jsp" />  --%>
+<jsp:include page="/WEB-INF/views/header.jsp" /> 
 
     <main role="main">
 <div id="section1" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
@@ -66,7 +66,7 @@
 </div>
 <div id="section2" class="container-fluid" style="padding-top:140px;padding-bottom:140px">
   <h1>Registration</h1>
-  <form class="form-horizontal" role="form" method="POST" action="saveUser">
+  <form:form class="form-horizontal" role="form" method="POST" action="saveUser">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
@@ -157,7 +157,7 @@
                 <button type="submit" value="Submit" class="btn btn-success"> <!-- <a href=""> --><i class="fa fa-user-plus"></i> Register</a></button>
             </div>
         </div>
-    </form>
+    </form:form>
 </div>
 <div id="section3" class="container-fluid" style="padding-top:240px;padding-bottom:240px">
   <h1>Sign In</h1>
