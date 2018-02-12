@@ -1,5 +1,7 @@
 package com.grocery.DaoImpl;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Session;
@@ -34,4 +36,65 @@ public class ProductDaoImpl {
 		session.saveOrUpdate(product);
 		session.getTransaction().commit();
 	}
+	
+	public List<Product> retrieveAllProd()
+	{
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		List<Product> li= session.createQuery("from Product").list();
+		session.getTransaction().commit();
+		return li;
+		
+	}
+	
+	
+	public Product findById(int pid)
+	{
+		Session session = sessionFactory.openSession();
+		Product p=null;
+		try
+		{
+			
+			session.beginTransaction();
+	//incomplete		p= session.get
+			session.getTransaction().commit();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return p;
+	}
+	
+	
+	public List<Product> getProductByCid(int cid)
+	{
+		Session session = sessionFactory.openSession();
+		List<Product> li= null;
+		session.beginTransaction();
+		
+		li= session.createQuery("from product where cid="+cid).list();
+		session.getTransaction().commit();
+		return li;
+	}
+	
+	
+	public void deleteProd(int pid)
+	{
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		Product p = (Product)session.get(Product.class,pid);
+		session.delete(p);
+		session.getTransaction().commit();
+	}
+	
+	public void updateProd(Product p)
+	{
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();		
+		session.update(p);
+		session.getTransaction().commit();
+	}
+	
 }

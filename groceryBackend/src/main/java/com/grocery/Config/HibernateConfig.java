@@ -24,8 +24,7 @@ import com.grocery.Model.*;
 
 
 @Configuration
-@ComponentScan("com.*")
-@EnableWebMvc
+@ComponentScan("com")
 @EnableTransactionManagement
 public class HibernateConfig {
 	@Autowired
@@ -91,7 +90,7 @@ public class HibernateConfig {
 	
 	@Autowired
 	@Bean(name = "userDaoImpl")
-	public UserDao getUserData(SessionFactory sf) {
+	public UserDaoImpl getUserData(SessionFactory sf) {
 	    return new UserDaoImpl(sf);
 	}
 	

@@ -26,21 +26,23 @@ public class UserDaoImpl implements UserDao {
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	@Autowired
-	public UserDaoImpl(SessionFactory sessionFactory)
-	{
-		this.sessionFactory = sessionFactory;
-	}
+	 @Autowired
+	    public UserDaoImpl(SessionFactory sessionFactory)
+	    {
+	    	super();
+	    	this.sessionFactory= sessionFactory;
+	    }
+		
 	
-	@Transactional
+	//@Transactional
 	public void insertUser(User user)
 	{
-		/*Session session = sessionFactory.openSession();
+		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.saveOrUpdate(user);
-		session.getTransaction().commit();*/
+		session.getTransaction().commit();
 		
-		sessionFactory.getCurrentSession().save(user);
+		//sessionFactory.getCurrentSession().save(user);
 	}
 	
 	
