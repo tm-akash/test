@@ -10,5 +10,5 @@ import com.Model.User;
 public interface UserDao {
 
     
-	void insertUser(User user);	
+	boolean insertUser(User user);	
 }

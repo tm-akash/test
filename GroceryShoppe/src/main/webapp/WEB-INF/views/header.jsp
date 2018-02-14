@@ -1,79 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
+   <%@ taglib prefix ="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix ="spring" uri="http://www.springframework.org/tags" %>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
     <%@page session="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
-</script>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Grocery</title>
 </head>
 <body>
 
-<nav id ="navbar-red" class="navbar navbar-inverse navbar-static-top" role="navigation">
-    <div class="container">
-        <ul class="nav navbar-nav">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"/>
-               
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-       </ul>
-       </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                   
-           <ul class="nav navbar-nav">
-                <li><a href="index">Home</a></li>
-        
-                <li><a href="contactus"><i class="fa fa-address-book" aria-hidden="true"></i></a></li>
-                <%-- <li><a href="${pageContext.request.contextPath}/goTologin">Login</a></li>
-                <li><a href="${pageContext.request.contextPath}/register">Register</a></li>
-                --%> <li><a href="${pageContext.request.contextPath}/admin/adding">Admin</a></li>
-               <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Admin list<span class="caret"></span></a>
-       <ul class="dropdown-menu">
-     
-     <li><a href="${pageContext.request.contextPath}/admin/suppList">Supplier</a> </li>         
-     <li><a href="${pageContext.request.contextPath}/admin/productList">Product</a> </li>
-     <li><a href="${pageContext.request.contextPath}/admin/catList">Category</a> </li>
-          
-           </ul><li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Category<span class="caret"></span></a>
-       <ul class="dropdown-menu">
-     <c:forEach var="catVal" items="${catList }">
-     <li><a href="${pageContext.request.contextPath}/productCustList?cid=${catVal.cid }">${catVal.name }</a> </li>         
-           </c:forEach>
-           </ul>
-   
-   <ul class="nav navbar-nav navbar right">
-   <c:if test="${pageContext.request.userPrincipal.name==null}">
-   <li><a href="${pageContext.request.contextPath}/register">Register</a></li>  
-   <li><a href="${pageContext.request.contextPath}/goTologin">Login</a></li>
-   </c:if>
-    <c:if test="${pageContext.request.userPrincipal.name!=null}" >
-    <li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
-    <li><a href="<c:url value="/logout"/>">Logout</a></li>
-    <li><a href="${pageContext.request.contextPath}/goToCart">My Cart <i class="fa fa-cart-plus" aria-hidden="true"></i></a></li>
-    
-    </c:if>  
-            </ul>
-       </li>
-             </div>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Grocery</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#section1"><span class="fa fa-home">&nbsp;</span>Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section2"><span class="fa fa-user-plus">&nbsp;</span>Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section3"><span class="fa fa-sign-in">&nbsp;</span>Sign In</a>
+            </li>
+            <li class="nav-item">
+            	<a class="nav-link" href="${pageContext.request.contextPath}/admin">Admin</a></li>
+            <li class="nav-item dropdown">
+      			<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Category</a>
+      				<div class="dropdown-menu">
+        				<a class="dropdown-item" href="#section41">Daily Eatables</a>
+        				<a class="dropdown-item" href="#section42">Food Grains</a>
+        				<a class="dropdown-item" href="#section43">Others	</a>
+      				</div>
+      		</li>		
+          </ul>
         </div>
-    
-</nav>
-
+      </nav>
+    </header>
 
 </body>
 </html>
-
-
-
-
-

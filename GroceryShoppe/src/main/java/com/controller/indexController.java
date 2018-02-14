@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.Dao.UserDao;
 import com.DaoImpl.UserDaoImpl;
 import com.Model.User;
 
@@ -26,7 +27,7 @@ public class indexController
 
 	
 	@Autowired
-	UserDaoImpl userDaoImpl;
+	UserDao userDao;
 	
 	
 	@RequestMapping("/")
@@ -35,7 +36,23 @@ public class indexController
 		return "index";
 	}
 	
+	@RequestMapping(value="/newUser", method=RequestMethod.POST)
+	public ModelAndView newUser(@ModelAttribute User user)
+	{
+			
+		System.out.println("The new user name entered is: "+user.getName());
+		userDao.insertUser(user);
+		return new ModelAndView("redirect:/");
+	}
 
+	/*@RequestMapping(value="/admin")
+	public ModelAndView admin()
+	{
+			
+		System.out.println("Inside admin controller");
+	//	userDao.insertUser(user);
+		return new ModelAndView("adminAdd");
+	}*/
 @RequestMapping(value="/register", method = RequestMethod.GET)
 public ModelAndView showRegister()
 {
@@ -64,7 +81,7 @@ public ModelAndView saveRegister(@Valid @ModelAttribute("user") User user, Bindi
 	else
 	{
 		user.setRole("ROLE_USER");// user and admin
-		userDaoImpl.insertUser(user);
+		userDao.insertUser(user);
 		mav.setViewName("index");
 		return mav;
 	}

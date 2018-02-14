@@ -16,7 +16,12 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.DaoImpl.UserDaoImpl;
+import com.Model.Category;
+import com.Model.Product;
+import com.Model.Supplier;
 import com.Model.User;
+import com.DaoImpl.CategoryDaoImpl;
+import com.DaoImpl.SupplierDaoImpl;
 
 @Configuration
 @ComponentScan("com.*")
@@ -27,10 +32,10 @@ public class hiberConfig
 	@Bean(name="dataSource")
 	public DataSource getH2DataSource()
 	{
-		System.out.println("Data Source Method");
+		/*System.out.println("Data Source Method");*/
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.h2.Driver");
-		dataSource.setUrl("jdbc:h2:tcp://localhost/~/cw");
+		dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("");
 	
@@ -53,7 +58,9 @@ public class hiberConfig
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
 		sessionBuilder.addProperties(getHibernateProperties());
 		sessionBuilder.addAnnotatedClass(User.class);
-	
+		sessionBuilder.addAnnotatedClass(Category.class);
+		sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(Product.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 
@@ -61,11 +68,28 @@ public class hiberConfig
 	
 	
 	@Autowired
-	@Bean(name="UserDaoImpl")
+	@Bean(name="userDao")
 	public UserDaoImpl getUserDAO(SessionFactory sessionFactory)
 	{
 		return new UserDaoImpl(sessionFactory);
 	}
+	
+	@Autowired
+	@Bean(name="supplierDao")
+	public SupplierDaoImpl getSuppData(SessionFactory sessionFactory)
+	{
+		return new SupplierDaoImpl(sessionFactory);
+	}
+	
+	
+	
+	@Autowired
+	@Bean(name="categoryDao")
+	public CategoryDaoImpl getCategoryData(SessionFactory sessionFactory)
+	{
+		return new CategoryDaoImpl(sessionFactory);
+	}
+	
 	
 	 @Autowired
 		@Bean(name = "transactionManager")

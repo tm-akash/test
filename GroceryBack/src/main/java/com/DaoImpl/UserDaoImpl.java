@@ -2,6 +2,8 @@ package com.DaoImpl;
 
 
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +27,25 @@ public class UserDaoImpl implements UserDao {
 	    }
 		
 	
-	//@Transactional
-	public void insertUser(User user)
+	@Transactional
+	public boolean insertUser(User user)
 	{
+		try{
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.saveOrUpdate(user);
 		session.getTransaction().commit();
-		
+		return true;
 		//sessionFactory.getCurrentSession().save(user);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			return false;
+		}
+		
+		
+		
 	}
 	
 	
