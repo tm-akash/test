@@ -19,7 +19,7 @@ public class Product {
 	@GeneratedValue
 	private int pid;
 	private String pname;
-	private String description;
+	private String pdescription;
 	private Float price;
 	private String imgname;
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -33,6 +33,9 @@ public class Product {
 	@Transient
 	MultipartFile pimage;
 
+
+
+
 	public String getPname() {
 		return pname;
 	}
@@ -41,12 +44,14 @@ public class Product {
 		this.pname = pname;
 	}
 
-	public String getDescription() {
-		return description;
+
+
+	public String getPdescription() {
+		return pdescription;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setPdescription(String pdescription) {
+		this.pdescription = pdescription;
 	}
 
 	public Float getPrice() {

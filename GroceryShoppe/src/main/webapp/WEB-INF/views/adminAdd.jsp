@@ -7,7 +7,7 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" >
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
     
@@ -43,7 +43,7 @@
 					<h4 class="input_title"> Category Id </h4>
 					<input class="form_control" type="number" name="cid" required/></td>
 					<h4 class="input_title">Category Name</h4>
-						<input class="form-control" type="text" name="categoryName" required/></td><br><br>
+						<input class="form-control" type="text" name="cName" required/></td><br><br>
 						<button class="btn btn-lg btn-primary" type="submit">Save</button>
 						<button class="btn btn-lg btn-primary" type="reset">Cancel</button> 
 					</form>
@@ -51,7 +51,7 @@
 				
 					<div class="tab-pane fade" id="tab2primary">
 					
-					<form method="post" action="<c:url value="/saveSupp" /> " class="form-signin">
+					<form method="post" action="<c:url value="/saveSup" /> " class="form-signin">
 					<span id="reauth-email" class="reauth-email"></span>
 					<h4 class="input_title"> Supplier Id </h4>
 					<input class="form_control" type="number" name="sid" required/></td>
@@ -67,7 +67,7 @@
 					
 					<div class="tab-pane fade" id="tab3primary">
 					 
-					<form method="post" action="<c:url value="/admin/saveP"/>" class="form-signin">
+					<form method="post" action="<c:url value="/saveP"/>" enctype="multipart/form-data" class="form-signin">
 					<span id="reauth-email" class="reauth-email"></span>
 					<tr>
 					<td class="input_title">Product Name</td>
@@ -98,7 +98,7 @@
 					<td> <select class="form-control" name="pCategory" required>
 					<option value="">---Category---</option>
 					<c:forEach items="${catList}" var="cate">
-						<option value="${cate.sid}"> ${cate.categoryName} </option></c:forEach>
+						<option value="${cate.cid}"> ${cate.cName} </option></c:forEach>
 					</select>
 					
 					
@@ -107,7 +107,7 @@
 					<td> Select Supplier</td>
 					<td> <select class="form-control" name="pSupplier" required>
 					<option value="">---Supplier---</option>
-					<c:forEach items="${satList}" var="cate">
+					<c:forEach items="${satList}" var="sate">
 						<option value="${sate.sid}"> ${sate.supplierName} </option></c:forEach>
 					</select>
 					</tr>
@@ -119,7 +119,7 @@
 					<tr>
 					
 					<td>Image</td>
-					<td><input class="form-control" type="file" name="file" accept="image/*"></td>
+					<td><input class="form-control" type="file" id="pimage" name="pimage" accept="image/*"></td>
 					</tr>
 					
 					
