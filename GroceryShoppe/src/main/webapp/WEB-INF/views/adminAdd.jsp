@@ -18,6 +18,15 @@
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 <div class="container">
+
+	<div align="center">
+        <h1>${title}</h1>
+        <h2>${message}</h2>
+        <c:if test="${pageContext.request.userPrincipal.name != null}">
+            <h2>Welcome : ${pageContext.request.userPrincipal.name} |
+                <a href="/<c:url value="/logout" />" > Logout</a></h2> 
+    </c:if>              
+    </div>
 	
 	<div class="page-header">
 	</br>	

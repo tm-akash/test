@@ -160,7 +160,8 @@
 </div>
 <div id="section3" class="container-fluid" style="padding-top:240px;padding-bottom:240px">
   <h1>Sign In</h1>
-  	<form accept-charset="UTF-8" role="form">
+<%--   <form:form class="form-horizontal" role="form" method="POST" action="newUser"> --%>
+  	<form:form class ="form-horizontal" role="form" method="POST" action="admin">
      <fieldset>
 		<div class="form-group">
 			<input class="form-control" placeholder="E-mail" name="email" type="text">
@@ -175,7 +176,7 @@
 		</div>
 		<input class="btn btn-lg btn-success btn-block" type="submit" value="Login">
 	</fieldset>
-   </form>			      	
+   </form:form>			      	
 </div>
 <div id="section41" class="container-fluid" style="padding-top:70px;padding-bottom:70px">
   <h1>Breakfast,Dairy and Bakery</h1>
